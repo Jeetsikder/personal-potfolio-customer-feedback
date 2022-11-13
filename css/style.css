@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.shadow-primary {
+  box-shadow: 0 0.5rem 1.125rem -0.5rem rgba(99, 102, 241, 0.9) !important;
+}
+.offer-list {
+  border-color: rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  border: none;
+  box-shadow: none;
+}
+input {
+  box-shadow: none;
+}
+
+.navbar .navbar-nav .active {
+  color: #cc9a06;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/css/style-quary-order-list.css" />
+    <!-- REMIX ICON -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-black">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary display-5" href="#"
+          >Potfolio <span class="text-black fst-italic">Control Page</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav fw-bold text-black ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Offers List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="quary.html">Customer Quary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Customer Order</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR -->
+
+    <!-- HEADING -->
+    <section class="heading py-4">
+      <header class="text-center">
+        <h1 class="fw-bold display-5 text-white">Customer Quary</h1>
+      </header>
+      <div class="container mt-md-5 mt-sm-4 mt-3">
+        <div class="row justify-content-center align-items-center g-4">
+          <!-- QUARY COUNT -->
+          <div class="col-md-6 col-12 text-center">
+            <p class="display-6 fw-semibold">
+              Total Quary's :- <span id="totalQuary">22</span>
+            </p>
+            <p class="fw-bold" style="color: greenyellow">
+              Total Seen:- <span id="totalSeenMessage">11</span>
+            </p>
+          </div>
+          <!-- //QUARY COUNT -->
+
+          <!-- SEARCH BAR -->
+          <div
+            class="col-md-6 col-12 d-inline-flex align-content-center justify-content-center"
+          >
+            <nav class="navbar bg-black ms-md-auto">
+              <div class="container-fluid">
+                <form class="d-flex" role="search">
+                  <input
+                    id="searchVisitorQuary"
+                    class="form-control me-2 bg-black text-white-50"
+                    type="search"
+                    placeholder="Search Quariy's"
+                    aria-label="Search"
+                  />
+                </form>
+              </div>
+            </nav>
+          </div>
+          <!-- SEARCH BAR -->
+        </div>
+      </div>
+    </section>
+    <!-- //HEADING -->
+
+    <!-- DISPLAY QUARIES  -->
+    <section class="quary-list py-3 my-4">
+      <div class="container-fluid my-4">
+        <div id="visitorQuaryBox" class="row justify-content-center gy-4">
+          <!--  -->
+          <!-- <div class="col-lg-3 col-sm-5 col-10">
+            <div class="quary-content pt-2 pb-1 px-4 rounded-4 translateY">
+              <div class="brand-info d-flex justify-content-between">
+                <div class="brand-icon">
+                  <img src="/img/favicon-32x32.png" class="me-2" alt="" />
+                  <span class="badge bg-primary rounded-pill ms-2">14</span>
+                </div>
+                <div class="spinner-grow text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="msg-seen">
+                  <i class="ri-check-double-line" style="font-size: 1.6rem"></i>
+                </div>
+              </div>
+              <div class="quary-heading text-primary fw-bold fst-italic">
+                <h3>Jeet Sikder</h3>
+              </div>
+              <div class="quary-list text-white">
+                <ul class="list-unstyled">
+                  <li class="my-1">Email:- jeetsikder78@gmail.com</li>
+                  <li class="my-1">Phone No:- 7278408648</li>
+                  <li class="my-1">Id:- HGRY00995566</li>
+                  <li class="my-1">Subject:- Hello Its me</li>
+                  <li class="my-1">
+                    Message:-
+                    <ul
+                      class="list-unstyled rounded-3 my-2 px-3 py-1 over-flow-msg"
+                    >
+                      <li>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Totam iure dolores debitis?
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="mt-2">
+                    <button class="btn btn-primary">
+                      <i class="ri-check-line" style="font-size: 1.6rem"></i>
+                    </button>
+                  </li>
+                </ul>
+                <ul
+                  class="list-unstyled d-flex justify-content-between fw-bold text-white-50"
+                >
+                  <li>26/07/2022</li>
+                  <li>12:06:11</li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+          <!-- //  -->
+        </div>
+
+        <!-- 8+ MESSAGE SHOW  -->
+        <section
+          id="lotOfMessage"
+          class="d-flex justify-content-center mt-3"
+        ></section>
+        <!-- 8+ MESSAGE SHOW  -->
+      </div>
+    </section>
+    <!-- //DISPLAY QUARIES  -->
+
+    <!-- PAGE SWITCH -->
+    <section class="d-flex justify-content-center">
+      <nav aria-label="Page navigation example ">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/index.html" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/index.html">1</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- PAGE SWITCH -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script src="/js/visitor/display-visitor-quary.js"></script>
+  <script src="/js/visitor/search-visitor-quary.js"></script>
+  <script src="/js/visitor/seen-quary-update-push.js"></script>
+</html>
