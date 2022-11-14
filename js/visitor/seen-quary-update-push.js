@@ -48,8 +48,10 @@ let visitorQuarySeenUpdate = () => {
     e.addEventListener("click", () => {
       // SEN ID TO FUNCTION FOR UPDATE FORM
       let elementId = e.parentElement.children[1].id;
-      //   console.log(elementId);
+
+      //PATCH THE MESSAGE HAS SEEN/RESOLVED
       patchVisitorQuary(elementId);
+
       //   RUN TIME ADD STYLYING TO CARD
       //   HIDE SPINNER
       e.parentElement.children[0].children[1].classList.add("d-none");
@@ -58,6 +60,20 @@ let visitorQuarySeenUpdate = () => {
       //   DISPLY BLOCK ***DUBLE TICK ICON**
       e.parentElement.children[2].classList.remove("d-none");
       e.parentElement.children[2].classList.add("d-block");
+
+      //   UPDATE TOTAL SEEN AND TOTAL LEFT ***COUNT***
+      let totalSeenMessage = document.getElementById("totalSeenMessage");
+      let totalUnseenMessages = document.getElementById("totalUnseenMessages");
+      totalSeenMessage.innerHTML = `<small class="text-white">${
+        new Number(totalSeenMessage.innerText) + 1
+      }</small>`;
+      totalUnseenMessages.innerHTML = `<small class="text-white">${
+        new Number(totalUnseenMessages.innerText) - 1
+      }</small>`;
+
+      new Number(totalUnseenMessages.innerText) < 1
+        ? totalUnseenMessages.parentElement.classList.add("d-none")
+        : "";
     });
   });
 };

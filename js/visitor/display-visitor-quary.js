@@ -11,9 +11,19 @@ let getVisitorQuary = async () => {
   }
 };
 
+let playAlertAudioForNewMessage = () => {
+  let song = new Audio("audio/new-message-alert.mp3");
+  let check = true;
+  // LOGIC FOR PLAY ONLY ONE TIME THE SOUND
+  check === true ? song.play() : "";
+  check = false;
+};
+
 // 8+ MESSAGE
 let unseenMessage;
 let seenMessage = 0;
+let headerMessageLeft = 0;
+let newMessageAlertVaidity = false;
 // DISPLY QUARY'S
 let displayVisitorQuary = async () => {
   let theData = await getVisitorQuary();
@@ -39,7 +49,12 @@ let displayVisitorQuary = async () => {
 
     // UPDATE TOTAL SEEN MESSAGE
     viewed === true ? seenMessage++ : seenMessage;
-    document.getElementById("totalSeenMessage").innerText = seenMessage;
+
+    // HEADER MEESSSAGE LEFT
+    viewed === false ? headerMessageLeft++ : headerMessageLeft;
+
+    // PLAY AUDIO FOR NEW MESSAGE
+    viewed === false ? playAlertAudioForNewMessage() : "";
 
     // ADD CARD TO DOM
     document.getElementById("visitorQuaryBox").innerHTML += `
@@ -125,6 +140,15 @@ let displayVisitorQuary = async () => {
                           </button>`;
       document.getElementById("unseenMessageId").innerHTML = unseenMessage;
     }
+
+    // UPDATE TOTAL SEEN MESSAGE (HEADER)
+    document.getElementById(
+      "totalSeenMessage"
+    ).innerHTML = `<small class="text-white">${seenMessage}</small>`;
+    // UPDATE TOTAL LEFT MESSAGE (HEADER)
+    document.getElementById(
+      "totalUnseenMessages"
+    ).innerHTML = `<small class="text-white">${headerMessageLeft}</small>`;
   }
   visitorQuarySeenUpdate();
 };

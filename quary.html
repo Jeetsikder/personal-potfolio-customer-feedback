@@ -3,12 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Visitor- Quary</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
+    />
+    <!-- ADD FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="/img/favicon-32x32.png"
+      type="image/x-icon"
     />
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="/css/style-quary-order-list.css" />
@@ -62,15 +68,28 @@
         <div class="row justify-content-center align-items-center g-4">
           <!-- QUARY COUNT -->
           <div class="col-md-6 col-12 text-center">
-            <p class="display-6 fw-semibold">
-              Total Quary's :- <span id="totalQuary">0</span>
+            <p class="display-6 fw-semibold text-primary pb-1 border-bottom">
+              Total Quary's :-
+              <span id="totalQuary"
+                ><small class="text-white">Fatching</small></span
+              >
             </p>
-            <p class="fw-bold" style="color: greenyellow">
-              Total Seen:- <span id="totalSeenMessage">0</span>
-            </p>
+            <div class="d-flex justify-content-between">
+              <p class="fw-bold ms-sm-0 ms-1" style="color: greenyellow">
+                Total Seen:-
+                <span id="totalSeenMessage"
+                  ><small class="text-white">Fatching</small></span
+                >
+              </p>
+              <p class="fw-bold me-sm-0 me-1" style="color: greenyellow">
+                Total Left:-
+                <span id="totalUnseenMessages"
+                  ><small class="text-white">Fatching</small></span
+                >
+              </p>
+            </div>
           </div>
           <!-- //QUARY COUNT -->
-
           <!-- SEARCH BAR -->
           <div
             class="col-md-6 col-12 d-inline-flex align-content-center justify-content-center"
