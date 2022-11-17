@@ -41,7 +41,7 @@ let updateClientQuaryWithKey = async (clientData, key) => {
     quantity: response?.data?.data?.web_application?.quantity,
   };
   details = { ...details, ...formInput };
-  //   updateVIEWEDinClientData(details, key);
+  updateVIEWEDinClientData(details, key);
   viewedCardAddStyling(key);
 };
 
