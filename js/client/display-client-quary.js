@@ -22,7 +22,10 @@ const displayClientOrderInfo = async () => {
   });
 
   sl = sl.reverse();
-  console.log(sl.length);
+  document.getElementById("totalQuary").innerText = sl.length;
+  let seenMessage = 0;
+  let unseenMessage = 0;
+  let sixPlusMessage;
   for (let i = 0; sl.length > i; i++) {
     // DATA FOR CLIENT-PERSONAL INFO
     let customerName = sl[i]?.data?.customerName;
@@ -34,6 +37,10 @@ const displayClientOrderInfo = async () => {
     let messageSubject = sl[i]?.data?.messageSubject;
     let date = sl[i]?.data?.date;
     let grandTotal = sl[i]?.data?.grandTotal;
+    let viewed = sl[i]?.data?.viewed == undefined ? false : sl[i]?.data?.viewed;
+    viewed == true ? seenMessage++ : "";
+    viewed == false ? unseenMessage++ : "";
+    sixPlusMessage = i + 1 - 6;
     // \\DATA FOR CLIENT-PERSONAL INFO
 
     // DATA FOR ORDER-INFO
@@ -58,7 +65,9 @@ const displayClientOrderInfo = async () => {
     // ADD INFORMATION TO DOM
     document.getElementById("clientQuaryBox").innerHTML += `
     <!-- ***CARD***  -->
-    <div class="col-lg-4 col-sm-6 col-11">
+    <div id=${i + 1} class="col-lg-4 col-sm-6 col-11 client-quary-card ${
+      i >= 6 ? "d-none quary-hide" : ""
+    }">
       <!-- CARD BODY -->
       <div class="card quary-card">
         <!-- CARD NAVIGATION BTN -->
@@ -94,7 +103,9 @@ const displayClientOrderInfo = async () => {
             >
               <img src="/img/favicon-32x32.png" class="me-2" alt="" />
               <div
-                class="spinner-grow text-primary d-inline-flex"
+                class="spinner-grow text-primary d-inline-flex ${
+                  viewed === true ? "d-none" : "d-block"
+                }"
                 role="status"
               >
                 <span class="text-white fw-bold" style="font-size: small"
@@ -103,12 +114,17 @@ const displayClientOrderInfo = async () => {
               </div>
             </div>
             <button
-              class="btn btn-primary fw-bold"
+              class="btn btn-primary fw-bold resolved ${
+                viewed === true ? "d-none" : "d-block"
+              }"
+              id="${key}"
               style="font-size: small"
             >
               Resolved
             </button>
-            <div class="msg-seen d-none" style="color: greenyellow">
+            <div class="msg-seen ${
+              viewed === true ? "d-block" : "d-none"
+            }" style="color: greenyellow">
               <i class="ri-check-double-line" style="font-size: 1.6rem"></i>
             </div>
           </div>
@@ -303,8 +319,24 @@ const displayClientOrderInfo = async () => {
     <!-- //***CARD***  -->
 
     `;
+    let lotOfMessageFoClient = document.getElementById("lotOfMessageFoClient");
+    if (i > 6) {
+      lotOfMessageFoClient.innerHTML = `<button id="showHideQuarybtn" onclick="displayHideMessageForClient(this)" type="button" class="btn btn-primary position-relative mt-0 mb-4">
+                                  See all
+                                  <span id="unseenMessageId"
+                                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                  >
+                                  <span class="visually">+</span>
+                                  </span>
+                          </button>`;
+      document.getElementById("unseenMessageId").innerHTML = sixPlusMessage;
+    }
   }
+
   cardNavigationBtn();
+  addVIEWEDinClientData();
+  document.getElementById("totalSeenMessage").innerHTML = seenMessage;
+  document.getElementById("totalUnseenMessages").innerHTML = unseenMessage;
 };
 displayClientOrderInfo();
 
@@ -382,6 +414,21 @@ let cardNavigationBtn = () => {
     });
   });
 };
-// clientInfo
-// clientOrderInfo
-// paymentRecord
+
+// SEE MORE BUTTON FUNCTION
+let displayHideMessageForClient = () => {
+  let elementId = [];
+  document.querySelectorAll(" .quary-hide").forEach((e) => {
+    elementId.push(e.id);
+  });
+  for (let i = 0; 2 > i; i++) {
+    if (document.getElementById(elementId[i]) != null) {
+      document.getElementById(elementId[i]).classList.remove("d-none");
+      document.getElementById(elementId[i]).classList.remove("quary-hide");
+    }
+  }
+  elementId.length - 2 <= 0
+    ? document.getElementById("showHideQuarybtn").classList.add("d-none")
+    : (document.getElementById("unseenMessageId").innerHTML =
+        elementId.length - 2);
+};

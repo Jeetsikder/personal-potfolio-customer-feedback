@@ -168,8 +168,8 @@ let displayHideMessage = () => {
     }
   }
 
-  console.log(elementId);
-  console.log(elementId.length);
+  // console.log(elementId);
+  // console.log(elementId.length);
   elementId.length - 2 <= 0
     ? document.getElementById("showHideQuarybtn").classList.add("d-none")
     : (document.getElementById("unseenMessageId").innerHTML =
