@@ -11,6 +11,16 @@ const getClientQuary = async () => {
   }
 };
 
+// NEW MESSAGE PLAYAUDIO FUNCTION
+let newMessageAlertTone = () => {
+  let song = new Audio("audio/new-message-alert.mp3");
+  let check = true;
+  // LOGIC FOR PLAY ONLY ONE TIME THE SOUND
+  check === true ? song.play() : "";
+  check = false;
+};
+let cheNewMessageAlertTone = true;
+
 // DISPLY CLIENT QUARY
 const displayClientOrderInfo = async () => {
   let response = await getClientQuary();
@@ -61,6 +71,9 @@ const displayClientOrderInfo = async () => {
       sl[i]?.data?.web_application?.product_name;
     let web_application_quantity = sl[i]?.data?.web_application?.quantity;
     let web_application_price = sl[i]?.data?.web_application?.price;
+
+    // CHECK NEW MESSAGE
+    viewed === false ? (cheNewMessageAlertTone = false) : "";
 
     // ADD INFORMATION TO DOM
     document.getElementById("clientQuaryBox").innerHTML += `
@@ -337,6 +350,9 @@ const displayClientOrderInfo = async () => {
   addVIEWEDinClientData();
   document.getElementById("totalSeenMessage").innerHTML = seenMessage;
   document.getElementById("totalUnseenMessages").innerHTML = unseenMessage;
+
+  // PLAY ALEART MESSAGE
+  cheNewMessageAlertTone === false ? newMessageAlertTone() : "";
 };
 displayClientOrderInfo();
 
