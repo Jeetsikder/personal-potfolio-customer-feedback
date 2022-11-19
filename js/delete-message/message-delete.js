@@ -34,6 +34,7 @@ let deleteMessagaFetch = (key) => {
     .then((response) => response.text())
     .then((response) => {
       alert(response);
+      keyInput.value = "";
     })
     .catch((err) => {
       alert(err);
