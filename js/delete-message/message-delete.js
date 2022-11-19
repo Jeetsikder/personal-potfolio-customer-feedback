@@ -13,6 +13,7 @@ let checkMessageType = async (key) => {
     .then((response) => {
       console.log(response);
       displyTypeOfMessage(response);
+      deleteMessagaFetch(key);
     })
     .catch((err) => {
       messsageType.innerHTML = `Check you key or Internet conection `;
@@ -23,6 +24,20 @@ let checkMessageType = async (key) => {
 let displyTypeOfMessage = async (type) => {
   let response = await type;
   messsageType.innerHTML = response?.data?.type;
+};
+
+// DELETE MESSAGE *** FETCH REQUEST ***
+let deleteMessagaFetch = (key) => {
+  fetch(`https://1ud4og.deta.dev/form/delete/${key}`, {
+    method: "DELETE",
+  })
+    .then((response) => response.text())
+    .then((response) => {
+      alert(response);
+    })
+    .catch((err) => {
+      alert(err);
+    });
 };
 
 // INPUT
