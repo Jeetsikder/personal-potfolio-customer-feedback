@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/delete-message.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="mainNabar" class="navbar navbar-expand-lg bg-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary display-5" href="#"
+          >Potfolio <span class="text-black fst-italic">Control Page</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav fw-bold text-black ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Offers List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/visitor.html">Visitor-Quary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/client.html">Client Quary</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Tools</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR -->
+
+    <!-- DELETE MESSAGE  -->
+    <section
+      id="deleteMessageCard"
+      class="d-flex align-items-center justify-content-center"
+    >
+      <div class="container-fluid row justify-content-center">
+        <div class="col-lg-7 col-sm-9 col-10 justify-content-center">
+          <div
+            class="row justify-content-center delete-message-container rounded-4 py-3 pt-1"
+          >
+            <div
+              class="col-sm-8 col-11 text-center d-inline-flex flex-column brand-header"
+            >
+              <div class="brand-icon">
+                <img src="/img/favicon-32x32.png" alt="" srcset="" />
+              </div>
+              <h3 class="fw-bold text-dark fst-italic">Delete Message</h3>
+            </div>
+            <div class="col-sm-8 col-11 text-center">
+              <div class="mb-3">
+                <label for="keyInput" class="form-label fw-bold"
+                  >Give your Key bellow</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="keyInput"
+                  placeholder="Give your key!!!"
+                />
+              </div>
+            </div>
+            <div class="col-sm-8 col-11 text-center">
+              <h5 id="messsageType" class="text-black fw-bold fst-italic">
+                Message form XYZ
+              </h5>
+            </div>
+            <div class="col-sm-8 col-11 d-grid">
+              <button
+                id="deleteMessageBtn"
+                class="btn btn-primary fw-semibold fst-italic"
+              >
+                Delete Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //DELETE MESSAG  -->
+
+    <!-- UNDEFINED OFFER UPDATE -->
+    <section
+      id="UndefinedTimeOffersCard"
+      class="d-inline-flex justify-content-center d-none"
+    >
+      <div class="container-fluid row d-inline-flex justify-content-center">
+        <div class="col-lg-7 col-sm-9 col-10 w-100">
+          <div
+            class="row justify-content-center delete-message-container rounded-4 py-3 pt-1"
+          >
+            <div
+              class="col-sm-8 col-11 text-center d-inline-flex flex-column brand-header"
+            >
+              <div class="brand-icon">
+                <img src="/img/favicon-32x32.png" alt="" srcset="" />
+              </div>
+              <h3 class="fw-bold text-dark fst-italic">
+                Update Undefined offers
+              </h3>
+            </div>
+            <div class="col-sm-8 col-11 d-grid">
+              <button
+                id="pushUndefinedOffer"
+                class="btn btn-primary fw-semibold fst-italic"
+              >
+                Push Offers
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //UNDEFINED OFFER UPDATE -->
+
+    <!-- CARD SHOW BTN -->
+    <section class="chenge-messageDelete-to-offerUpdate">
+      <ul class="list-group d-inline-flex flex-row">
+        <li class="list-group-item ms-2 me-2 text-center">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="display-card"
+            value="delete-message"
+            id="displayDeleteMessageCard"
+            checked
+          />
+          <label class="form-check-label" for="displayDeleteMessageCard"
+            >Delete Message</label
+          >
+        </li>
+        <li class="list-group-item ms-2 me-2 text-center">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="display-card"
+            value="Undefined"
+            id="displayUndefinedOfferUpdate"
+          />
+          <label class="form-check-label" for="displayUndefinedOfferUpdate"
+            >Undefined Offer</label
+          >
+        </li>
+      </ul>
+    </section>
+    <!-- //CARD SHOW BTN -->
+
+    <!-- PAGE SWITCH -->
+    <section id="pageSwitch" class="d-flex justify-content-center">
+      <nav aria-label="Page navigation example ">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/client.html" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/index.html">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/visitor.html">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/client.html">3</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="/tools.htm">4</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <!-- PAGE SWITCH -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+      integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <script src="/js/delete-message/message-delete.js"></script>
+  <script src="/js/delete-message/display-cards-btn.js"></script>
+  <script src="/js/delete-message/offer.js"></script>
+</html>

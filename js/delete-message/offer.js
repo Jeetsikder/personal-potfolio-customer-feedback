@@ -62,11 +62,14 @@ const updateOffers = () => {
   })
     .then((response) => response.json())
     .then((response) => console.log(response))
-    .catch(console.log("Catech"));
+    .catch((err) => {
+      alert(err);
+    });
 };
 
-document.getElementById("update-coupon").addEventListener("click", (e) => {
+document.getElementById("pushUndefinedOffer").addEventListener("click", (e) => {
   e.preventDefault();
   // updateOffers();
-  getNewUpdateData();
+  // getNewUpdateData();
+  console.log("Hello");
 });
