@@ -26,8 +26,10 @@ const displayClientOrderInfo = async () => {
   let response = await getClientQuary();
   //   console.log(response?.data[0].data);
   let sl = response?.data.sort((a, b) => {
-    let date1 = new Date(a.date).getTime();
-    let date2 = new Date(b.date).getTime();
+    let date1 = new Date(a.data.date).getTime();
+    let date2 = new Date(b.data.date).getTime();
+    console.log("date1" + " = " + date1);
+    console.log("date2" + " = " + date2);
     return date1 - date2;
   });
 
