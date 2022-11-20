@@ -238,7 +238,7 @@ const displayClientOrderInfo = async () => {
                 <tr class="${
                   Number(web_application_quantity) != 0 ? "" : "d-none"
                 }">
-                  <th>WEBAPPS</th>
+                  <th>DYNAMIC+</th>
                   <th>${web_application_price}</th>
                   <th>${web_application_quantity}</th>
                   <th>${
