@@ -163,7 +163,7 @@ const displayClientOrderInfo = async () => {
                   <span class="fw-bold">Id:-</span> ${key}
                 </li>
                 <li class="my-1">
-                  <span class="fw-bold">Bank Referance:-</span> ${bankReferance}
+                  <span class="fw-bold">Bank Reference:-</span> ${bankReferance}
                 </li>
                 <li class="my-1">
                   <span class="fw-bold">Subject:-</span> ${messageSubject}
