@@ -19,6 +19,9 @@ let playAlertAudioForNewMessage = () => {
   check = false;
 };
 
+// If for-loop not working(sl.length=0)
+let testForLoop = false;
+
 // 8+ MESSAGE
 let unseenMessage;
 let seenMessage = 0;
@@ -49,7 +52,6 @@ let displayVisitorQuary = async () => {
 
     // UPDATE TOTAL SEEN MESSAGE
     viewed === true ? seenMessage++ : seenMessage;
-
     // HEADER MEESSSAGE LEFT
     viewed === false ? headerMessageLeft++ : headerMessageLeft;
 
@@ -149,8 +151,21 @@ let displayVisitorQuary = async () => {
     document.getElementById(
       "totalUnseenMessages"
     ).innerHTML = `<small class="text-white">${headerMessageLeft}</small>`;
+
+    testForLoop = true;
   }
   visitorQuarySeenUpdate();
+  // IF FOR-LOOP NOT WORKING
+  if (testForLoop === false) {
+    // UPDATE TOTAL SEEN MESSAGE (HEADER)
+    document.getElementById(
+      "totalSeenMessage"
+    ).innerHTML = `<small class="text-white">No message available</small>`;
+    // UPDATE TOTAL LEFT MESSAGE (HEADER)
+    document.getElementById(
+      "totalUnseenMessages"
+    ).innerHTML = `<small class="text-white">No message available</small>`;
+  }
 };
 displayVisitorQuary();
 
